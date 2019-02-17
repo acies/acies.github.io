@@ -80,7 +80,10 @@ canvas.in-front {
 
 .button {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-family: sans-serif;
     text-align: center;
     cursor: pointer;
@@ -88,9 +91,9 @@ canvas.in-front {
     width: 27.5vmin;
     height: 27.5vmin;
     border-radius: 13.75vmin;
-    background: rgba(255, 255, 255, 0.33);
-    color: white;
-    transition: all .3s ease;
+    background: rgba(255, 255, 255, 0.075);
+    color: rgba(255,255,255,.8);
+    transition: background-color .3s ease, color .3s ease, opacity .3s ease;
 }
 .button::before {
     position: absolute;
@@ -104,22 +107,20 @@ canvas.in-front {
     right: 0;
     z-index: 100;
     transform: scale(.5) translate(25%, 25%);
-    color: rgb(100,100,100);
-    background: rgba(100,100,100,.33);
+    color: rgba(100,100,100, .8);
+    background: rgba(100,100,100,.1);
     opacity: .4;
 }
 .music.button.playing {
-    color: rgb(0,0,0);
-    background: rgba(0,0,0,.33);
+    color: rgba(0,0,0, .8);
+    background: rgba(0,0,0,.1);
     opacity: .66;
 }
-.music.button::before {
-    content: '\266B';
-    transform: translate(-55%, -50%);
+.music.button i {
+    transform: translateX(-5%) scale(.8);
 }
-.start.button::before {
-    content: '\25B6';
-    transform: translate(-36%, -50%);
+.start.button i {
+    transform: translateX(10%) scale(.9);
 }
 
 @keyframes floatingHearts {

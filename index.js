@@ -25,6 +25,7 @@ class Welcome {
         
         const button = document.createElement('div');
         button.classList.add('button', 'start');
+        button.innerHTML = '<i class="fas fa-play"></i>';
         button.addEventListener('click', () => {
             this.intro.addEventListener('transitionend', this._play);
             this.intro.classList.remove('visible');
@@ -317,21 +318,23 @@ class Game {
             const optimalAspect = 812 / 375; // 2.16533
             const defaultDistance = 13;
             const maxDistance = 22;
+            const minDistance = 13;
             const distanceMultiplier = optimalAspect / camera.aspect;
 
-            const distance = Math.min(defaultDistance * distanceMultiplier, maxDistance);
+            const distance = Math.max(Math.min(defaultDistance * distanceMultiplier, maxDistance), minDistance);
         
             camera.position.set(
                 1.25 * distance,
                 .5 * distance,
                 1 * distance
             );
+            //console.log('camera distance set to', distance);
 
             const defaultFog = 0.05;
             const minFog = 0.03;
             const fogMultiplier = camera.aspect / optimalAspect;
             this.fogDensity = Math.max(defaultFog * fogMultiplier, minFog);
-            console.log('fog density set to', this.fogDensity);
+            //console.log('fog density set to', this.fogDensity);
         };
         this.updateDistanceDependencies();
 
@@ -488,6 +491,7 @@ class Music {
         const button = document.createElement('div');
         this.button = button;
         button.classList.add('button', 'music');
+        button.innerHTML = '<i class="fas fa-music"></i>';
         button.style.opacity = 0;
         setTimeout(() => {
             button.style.opacity = '';
