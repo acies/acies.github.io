@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["home"],{"0394":function(e,n,t){"use strict";t.r(n);var a=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("editorial",{staticClass:"home"})},l=[],o={name:"home"},s=o,c=t("2877"),i=Object(c["a"])(s,a,l,!1,null,null,null),r=i.exports;n["default"]=r}}]);
+//# sourceMappingURL=home.a826cbac.js.map
